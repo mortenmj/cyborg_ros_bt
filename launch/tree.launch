@@ -1,0 +1,11 @@
+<launch>
+  <node name="do_recharge" pkg="cyborg_bt" type="do_recharge.py" />
+  <node name="do_task" pkg="cyborg_bt" type="do_task.py" />
+
+  <node name="check_if_have_task" pkg="cyborg_bt" type="check_if_have_task.py" />
+  <node name="check_if_have_urgent_task" pkg="cyborg_bt" type="check_if_have_urgent_task.py" />
+  <node name="check_if_battery_low" pkg="cyborg_bt" type="check_if_battery_low.py" />
+  <node name="check_if_battery_very_low" pkg="cyborg_bt" type="check_if_battery_very_low.py" />
+
+  <node name="cyborg_bt" pkg="cyborg_bt" type="cyborg_tree" />
+</launch>
