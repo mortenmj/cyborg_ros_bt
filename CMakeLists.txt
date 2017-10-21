@@ -34,12 +34,12 @@ add_service_files(
 add_definitions(-Wall -lglut -lGL -std=c++11)
 
 catkin_install_python( PROGRAMS
-    src/nodes/action_test.py
-    src/nodes/condition_test.py
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-catkin_package( CATKIN_DEPENDS 
+catkin_package(
+    INCLUDE_DIRS include
+    CATKIN_DEPENDS 
 	roscpp
 	rospy
 	std_msgs
@@ -79,7 +79,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 include_directories(include
     ${catkin_INCLUDE_DIRS} )
 
-add_executable(cyborg_tree src/tree.cpp)
+add_executable(cyborg_tree src/main.cpp src/parser.cpp)
 
 target_link_libraries(cyborg_tree
     behavior_tree_core
